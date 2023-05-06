@@ -22,7 +22,7 @@ class App extends Component {
 
   render(){
     const  {list}  = this.props.store.getState();
-    console.log('render');
+    console.log('render',this.props.store.getState());
     return (
       <div className="App">
         <Navbar />
@@ -34,7 +34,11 @@ class App extends Component {
         </div>
         <div className="list">
           {list.map((movie, index) => (
-            <MovieCard movie={movie} key={`movie-${index}`} />
+            <MovieCard 
+              movie={movie} 
+              key={`movie-${index}`} 
+              dispatch={this.props.store.dispatch}
+              />
           ))}
         </div>
       </div>
