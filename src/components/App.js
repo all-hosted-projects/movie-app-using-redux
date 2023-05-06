@@ -17,11 +17,11 @@ class App extends Component {
     //dispctch action
     store.dispatch(addMovies(data))
 
-    console.log('state',this.props.store.getState());
+    console.log('state',this.props.store.getState()); //{list:[], favourite:[]}
   }
 
   render(){
-    const  movies  = this.props.store.getState();
+    const  {list}  = this.props.store.getState();
     console.log('render');
     return (
       <div className="App">
@@ -33,7 +33,7 @@ class App extends Component {
           </div>
         </div>
         <div className="list">
-          {movies.map((movie, index) => (
+          {list.map((movie, index) => (
             <MovieCard movie={movie} key={`movie-${index}`} />
           ))}
         </div>
