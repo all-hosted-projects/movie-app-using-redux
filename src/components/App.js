@@ -17,13 +17,13 @@ class App extends Component {
     //dispctch action
     store.dispatch(addMovies(data))
 
-    console.log('state',this.props.store.getState()); //{list:[], favourite:[]}
+    console.log('state',this.props.store.getState()); 
   }
 
   isMovieFavourite=(movie)=>{
-    const {favourites} =this.props.store.getState();
+    const {movies} =this.props.store.getState();
 
-    const index=favourites.indexOf(movie); //check if movie available then return index no
+    const index=movies.favourites.indexOf(movie); //check if movie available then return index no
     
     if(index!==-1){
       return true;
@@ -36,7 +36,8 @@ class App extends Component {
   }
 
   render(){
-    const  {list, favourites, showFavourites}  = this.props.store.getState();
+    const {movies}=this.props.store.getState();     //{movies:{}, search:{}}
+    const  {list, favourites, showFavourites}  = movies;
     console.log('render',this.props.store.getState());
 
     const displayMovies=showFavourites?favourites:list; //if showFavourite is true then show favourites list, if faslse then show list array of all movies
