@@ -11,6 +11,7 @@
 export const ADD_MOVIES='ADD_MOVIES';
 export const ADD_TO_FAVOURITE='ADD_TO_FAVOURITE';
 export const REMOVE_FROM_FAVOURITE='REMOVE_FROM_FAVOURITE';
+export const SET_SHOW_FAVOURITES='SET_SHOW_FAVOURITES';
 
 
 
@@ -36,5 +37,13 @@ export function removeFromFavourite(movie){
         movie:movie    
     }
 }
+
+export function setShowFavourite(isFav){
+    return{
+        type:SET_SHOW_FAVOURITES,
+        isFav:isFav    
+    }
+}
+
 
 
