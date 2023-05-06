@@ -1,4 +1,4 @@
-import { ADD_MOVIES,ADD_FAVOURITE } from "../actions";
+import { ADD_MOVIES,ADD_FAVOURITE, REMOVE_FROM_FAVOURITE, ADD_TO_FAVOURITE } from "../actions";
 
 const initialMoviesState={
     list:[],
@@ -21,12 +21,21 @@ export default function movies(state=initialMoviesState, action){
                 list:action.movies
             }
 
-        case ADD_FAVOURITE:
-            return{
+            case ADD_TO_FAVOURITE:
+                return{
+                    ...state,
+                    favourites:[action.movie, ...state.favourites]
+                }
+            case REMOVE_FROM_FAVOURITE:
+                const filteredArray=state.favourites.filter(
+                    movie=>movie.Title!==action.movie.Title
+                );
+
+                return{
                 ...state,
-                favourites:[action.movie, ...state.favourites]
+                favourites:filteredArray
             }
-        default:
-            return state;
-    }
+            default:
+                return state;
+        }
 }
