@@ -20,6 +20,16 @@ class App extends Component {
     console.log('state',this.props.store.getState()); //{list:[], favourite:[]}
   }
 
+  isMovieFavourite=(movie)=>{
+    const {favourites} =this.props.store.getState();
+
+    const index=favourites.indexOf(movie); //check if movie available then return index no
+    
+    if(index!==-1){
+      return true;
+    }
+    return false;
+  }
   render(){
     const  {list}  = this.props.store.getState();
     console.log('render',this.props.store.getState());
@@ -38,6 +48,8 @@ class App extends Component {
               movie={movie} 
               key={`movie-${index}`} 
               dispatch={this.props.store.dispatch}
+              isFavourite={this.isMovieFavourite(movie)}
+
               />
           ))}
         </div>
