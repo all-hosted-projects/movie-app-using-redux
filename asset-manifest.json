@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/movie-app-using-redux/static/css/main.12c45a3e.css",
+    "main.js": "/movie-app-using-redux/static/js/main.514a0fe2.js",
+    "index.html": "/movie-app-using-redux/index.html",
+    "main.12c45a3e.css.map": "/movie-app-using-redux/static/css/main.12c45a3e.css.map",
+    "main.514a0fe2.js.map": "/movie-app-using-redux/static/js/main.514a0fe2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.12c45a3e.css",
+    "static/js/main.514a0fe2.js"
+  ]
+}
